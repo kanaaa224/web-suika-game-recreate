@@ -1,0 +1,11 @@
+{
+    "name": "マージ パズル ゲーム",
+    "icons": [
+        {
+            "src": "./res/icon.png",
+            "sizes": "512x512"
+        }
+    ],
+
+    "display": "standalone"
+}
