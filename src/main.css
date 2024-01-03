@@ -1,0 +1,303 @@
+/*
+    (c) 2023 kanaaa224. All rights reserved.
+*/
+
+@import 'https://cdn.jsdelivr.net/gh/kanaaa224/web-common@master/web-app-sources/global-layout-1-with-style-1.css';
+@import 'https://fonts.googleapis.com/css2?family=DotGothic16&display=swap';
+
+:root {
+    --color-1: #ffd59d;
+    --color-2: #ffeedb;
+    --color-3: #ff5300bf;
+
+    --body-background: var(--color-1);
+    --body-color:      #000;
+
+    --main-article-section-background: #0000000d;
+}
+
+html {
+    body {
+        main {
+            article.loading {
+                block-size: 80vh;
+
+                justify-content: center; align-items: center;
+
+                section {
+                    inline-size: fit-content; padding-inline: 3rem;
+
+                    flex-direction: row; align-items: center;
+                }
+            }
+
+            article.title {
+                section.A, section.B, section.C {
+                    justify-content: center;
+                }
+
+                section.A {
+                    align-items: center;
+
+                    > div {
+                        gap: 5rem;
+
+                        display: inherit; justify-content: inherit; align-items: inherit;
+
+                        img {
+                            inline-size: 20%;
+                        }
+
+                        h1 {
+                            font-size: 2rem;
+                            font-family: 'DotGothic16', sans-serif;
+                            font-weight: bold;
+                        }
+
+                        p {
+                            opacity: .5;
+                        }
+
+                        div {
+                            display: inherit; flex-direction: column;
+                        }
+                    }
+
+                    @media (width < 1000px) {
+                        > div {
+                            gap: inherit;
+
+                            flex-direction: column;
+
+                            h1 {
+                                font-size: 1.25rem;
+                            }
+                        }
+                    }
+                }
+
+                section.B {
+                    flex-direction: row;
+
+                    p {
+                        inline-size: 10rem; padding: .5rem 2rem;
+
+                        background: #0000000d;
+
+                        border-radius: .5rem;
+
+                        text-align: center;
+
+                        cursor: pointer;
+
+                        &:hover {
+                            opacity: .75;
+                        }
+                    }
+                }
+
+                section.C {
+                    h1 {
+                        font-weight: bold;
+                    }
+
+                    > div {
+                        gap: 1rem;
+
+                        display: grid;
+
+                        grid-template-columns: repeat(4, 1fr);
+
+                        overflow: auto;
+
+                        > div {
+                            padding: 1rem; padding-inline-start: 2rem; gap: 1rem;
+
+                            display: flex; align-items: center;
+
+                            background: #0000000d;
+
+                            border-radius: .5rem;
+
+                            img {
+                                inline-size: 3rem;
+                            }
+
+                            div {
+                                display: flex; flex-direction: column;
+
+                                p {
+                                    font-size: .75rem;
+
+                                    opacity: .5;
+                                }
+                            }
+                        }
+                    }
+
+                    @media (width < 1000px) {
+                        > div {
+                            grid-template-columns: auto;
+                        }
+                    }
+                }
+            }
+
+            article.game {
+                block-size: 80vh;
+
+                justify-content: center; align-items: center;
+
+                section {
+                    position: relative;
+
+                    inline-size: 100%; block-size: 100%; padding: 0;
+
+                    > div {
+                        position: absolute; inset-inline: 1rem; inset-block-start: 1rem;
+
+                        display: flex; justify-content: space-between; align-items: flex-start;
+
+                        div {
+                            gap: 1rem;
+
+                            display: flex; align-items: center;
+
+                            h1 {
+                                padding: .5rem 1rem;
+
+                                background: #0000000d;
+
+                                backdrop-filter: blur(1rem);
+
+                                border-radius: .5rem;
+
+                                font-size: 1.25rem;
+
+                                span {
+                                    font-weight: bold;
+                                }
+                            }
+
+                            h2 {
+                                opacity: .5;
+                            }
+                        }
+
+                        > p {
+                            padding-inline: 1rem;
+
+                            background: #0000000d;
+
+                            backdrop-filter: blur(1rem);
+
+                            border-radius: .5rem;
+
+                            text-align: center;
+
+                            cursor: pointer;
+
+                            &:hover {
+                                opacity: .75;
+                            }
+                        }
+                    }
+
+                    canvas {
+                        block-size: 100%;
+
+                        touch-action: none;
+                    }
+                }
+            }
+        }
+
+        header {
+            flex-direction: row; justify-content: space-between; align-items: center;
+
+            h1 {
+                font-family: 'DotGothic16', sans-serif;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            p {
+                opacity: .5;
+
+                span.mdi {
+                    font-size: 1.5rem;
+                }
+            }
+
+            div {
+                gap: 2rem;
+
+                display: inherit;
+
+                @media (width < 1000px) {
+                    gap: 1rem;
+                }
+            }
+        }
+
+        dialog {
+            position: fixed; inset: 0;
+
+            display: flex; justify-content: center; align-items: center;
+
+            > div {
+                gap: 1rem; padding: 1rem 5rem;
+
+                display: flex; flex-direction: column;
+
+                background: var(--color-2); color: inherit;
+
+                border-radius: 1rem;
+                border: solid .25rem var(--color-3);
+
+                &:before {
+                    content: '';
+
+                    position: fixed; inset: 0; z-index: -1;
+
+                    background: #00000040;
+
+                    pointer-events: none;
+                }
+
+                @media (width < 1000px) {
+                    padding-inline: 2.5rem;
+                }
+
+                h1 {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+
+                    span.mdi {
+                        font-size: 2.5rem;
+                    }
+                }
+
+                p {
+                    font-size: 1.25rem;
+                }
+
+                p.button {
+                    padding-inline: 1rem;
+
+                    background: #0000001a;
+
+                    border-radius: .5rem;
+
+                    text-align: center;
+
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: .75;
+                    }
+                }
+            }
+        }
+    }
+}
